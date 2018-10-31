@@ -14,6 +14,9 @@ img {
     display: block;
 }
 
+.red {
+    color: #A94442;
+}
 /* 左侧样式 */
 .lt_aside {
     width: 180px;
@@ -23,6 +26,10 @@ img {
     left: 0;
     top: 0;
     z-index: 999;
+    transition: all .5s;
+}
+.lt_aside.active {
+    left: -180px;
 }
 .lt_aside .branch {
     height: 50px;
@@ -56,6 +63,7 @@ img {
     background-color: #1d1f21;
     border-left: 3px solid #006699;
 }
+
 .lt_aside .nav a {
     height: 40px;
     display: block;
@@ -77,6 +85,10 @@ img {
 .lt_main {
     padding-left: 180px;
     padding-top: 50px;
+    transition: all .5s;
+}
+.lt_main.active {
+    padding-left: 0;
 }
 .lt_main .lt_top {
     height: 50px;
@@ -87,8 +99,12 @@ img {
     left: 0;
     top: 0;
     padding-left: 180px;
+    z-index: 666;
+    transition: all .5s;
 }
-
+.lt_main .lt_top.active {
+    padding-left: 0px;
+}
 .lt_main .lt_top a {
     width: 50px;
     height: 50px;
@@ -103,4 +119,19 @@ img {
 }
 .lt_content .breadcrumb {
     margin-top: 20px;
+}
+.lt_content .content .echarts_le,
+.lt_content .content .echarts_ri
+ {
+    width: 48%;
+    height: 480px;
+}
+
+
+/* 设置表格样式 */
+
+.table.table-bordered th,
+.table.table-bordered td {
+    text-align: center;
+    vertical-align: middle;
 }
