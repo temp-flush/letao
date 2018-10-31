@@ -1,11 +1,106 @@
-body {
-    background-color: #222d32;
+/* 公共样式 */
+a:hover,
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
 }
-h3 {
-    height: 30px;
-    line-height: 30px;
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+img {
+    display: block;
+}
+
+/* 左侧样式 */
+.lt_aside {
+    width: 180px;
+    height: 100%;
+    background-color: #222D32;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+.lt_aside .branch {
+    height: 50px;
+    line-height: 50px;
+    background-color: #367FA9;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+.lt_aside .user  {
+    padding-top: 30px;
+    height: 180px;
+}
+.lt_aside .user img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.lt_aside .user p {
+    text-align: center;
+    color: white;
     font-size: 18px;
+    height: 40px;
+    line-height: 40px;
 }
-.mt-150 {
-    margin-top: 150px;
+.lt_aside .nav  a {
+    border-left: 3px solid transparent;
+}
+.lt_aside .nav  a.active {
+    background-color: #1d1f21;
+    border-left: 3px solid #006699;
+}
+.lt_aside .nav a {
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    color: white;
+    padding-left: 45px;
+}
+.lt_aside .nav  .child {
+    display: none;
+}
+.lt_aside .nav  .child a{
+    padding-left: 60px;
+}
+.lt_aside .nav a i {
+    margin-right: 5px;
+}
+
+/* 右侧样式 */
+.lt_main {
+    padding-left: 180px;
+    padding-top: 50px;
+}
+.lt_main .lt_top {
+    height: 50px;
+    line-height: 50px;
+    background-color: #3c8dbc;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-left: 180px;
+}
+
+.lt_main .lt_top a {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    font-size: 16px;
+}
+.lt_content {
+    padding: 0px 15px;
+    height: 1000px;
+}
+.lt_content .breadcrumb {
+    margin-top: 20px;
 }
