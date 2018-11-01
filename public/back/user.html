@@ -55,22 +55,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>itcast</td>
-                            <td>15757771111</td>
-                            <td>正常</td>
-                            <td><button class="btn btn-danger">禁用</button></td>
-                        </tr>
                     </tbody>
                 </table>
+                <div class="text-right">
+                    <ul id="paginator"></ul>
+                </div>
+
             </div>
         </div>
     </div>
     </div>
     <!-- 模态框 -->
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="updateTpl" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -78,29 +74,32 @@
                     <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
                 </div>
                 <div class="modal-body red">
-                    <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？
+                    <i class="glyphicon glyphicon-info-sign"></i>你确定要执行此操作吗？
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" id="logout">退出</button>
+                    <button type="button" class="btn btn-primary" id="confirm">确认</button>
                 </div>
             </div>
         </div>
     </div>
 
+
     <script type="text/html" id="tmp">
         {{ each rows v i }}
         <tr>
-            <td>{{ i }}</td>
+            <td>{{ (i+1)+ (page-1)*size }}</td>
             <td>{{ v.username }}</td>
             <td>{{ v.mobile }}</td>
             <td>{{ v.isDelete==1 ? '正常':'禁用' }}</td>
+            <td data-id={{ v.id }}>
             {{ if (v.isDelete==1) }}
-            <td><button class="btn btn-danger">禁用</button></td>
+            <button class="btn btn-danger">禁用</button>
             {{ else }}
-            <td><button class="btn btn-success">启用</button></td>
+            <button class="btn btn-success">启用</button>
             {{ /if }}
-            </tr>
+           </td>
+        </tr>
         {{ /each }}
     </script>
 
@@ -108,26 +107,10 @@
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
     <script src="lib/artTemplate/template-web.js"></script>
+    <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/checklogin.js"></script>
-    <script>
-        $.ajax({
-            type:'get',
-            url:'/user/queryUser',
-            dataType:'json',
-            data:{
-                page:1,
-                pageSize:5
-            },
-            success:function(info){
-                console.log(info)
-                var htmlstr=template('tmp',info);
-                console.log(htmlstr);
-                $('tbody').html(htmlstr)
-            }
-        })
-    </script>
-
+    <script src="js/user.js"></script>
 </body>
 
 </html>
