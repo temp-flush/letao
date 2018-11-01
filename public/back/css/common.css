@@ -17,6 +17,9 @@ img {
 .red {
     color: #A94442;
 }
+.mb-20 {
+    margin-bottom: 20px;
+}
 /* 左侧样式 */
 .lt_aside {
     width: 180px;
