@@ -1,0 +1,90 @@
+html,body {
+    width: 100%;
+    height: 100%;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.lt_container {
+    width: 100%;
+    height: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding-top: 45px;
+    padding-bottom: 55px;
+    overflow: hidden;
+    position: relative;
+}
+.lt_header {
+    height: 45px;
+    width: 100%;
+    background-color: #006699;    
+    position: absolute;
+    top: 0;
+    padding: 0 45px;
+}
+.lt_header h3 {
+    text-align: center;
+    line-height: 45px;
+    margin: 0;
+    color: white;
+}
+.lt_header .icon_le,.lt_header .icon_ri {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 45px;
+    color: white;
+}
+.lt_header .icon_le {
+    left: 0;
+}
+.lt_header .icon_ri {
+    right: 0;
+}
+
+.lt_main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.lt_main .lt_nav {
+    padding: 10px;
+}
+.lt_main .lt_nav li {
+    float: left;
+    width: 33.3%;
+}
+.lt_main .lt_nav li img {
+    width: 100%;
+}
+
+.lt_footer {
+    height: 55px;
+    background-color: #069;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.lt_footer ul li {
+    float: left;
+    width: 25%;
+    height: 55px;
+    text-align: center;
+    padding-top: 8px;
+    color: white;
+}
+.lt_footer ul li a,.lt_footer ul li p  {
+    color: white;
+}
+.lt_footer ul li a.active {
+    color: orange;
+}
+.lt_footer ul li a.active p{
+    color: orange;
+}
