@@ -46,6 +46,7 @@ $(function() {
         dataType: "json",
         success: function( info ) {
           console.log( info )
+          console.log(info.data[0].pic[0].picAddr)
           var htmlStr = template( "tpl" , info );
           $('.lt_product').html( htmlStr );
         }
